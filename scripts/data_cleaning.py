@@ -5,7 +5,7 @@ from pyspark.sql.functions import col, unix_timestamp
 accesskey = "accesskey"
 secretkey = "secretkey"
 data_path = "s3a://data_path/"
-
+write_path = "s3a://write_path"
 
 
 def remove_outliers_iqr(df, columns):
@@ -54,8 +54,6 @@ df = remove_outliers_iqr(df, ["customer_id", "terminal_id", "tx_time_seconds", "
 df = df.orderBy("transaction_id")
 
 df = df.repartition(40)
-
-write_path = "s3a://write_path"
 
 df.write.mode("overwrite").option("header", "true").parquet(write_path) 
 
