@@ -86,7 +86,7 @@
 * Посмотреть список доступых льгот
 ***
 ## [Очистка данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/notebook/Data%20cleaning.ipynb):
-* [Поиск проблем в данных](https://i.ytimg.com/vi/L9W4oeEwUSY/maxresdefault.jpg):
+* Поиск проблем в данных:
   * Дубликаты
   * Пропуски
   * Отрицательные значения
