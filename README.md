@@ -93,4 +93,4 @@
   * Неправильный формат даты
   * Выбросы
 * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
-* Итоговые данные: [https://storage.yandexcloud.net/ducket4/](https://storage.yandexcloud.net/ducket4/)
+* Итоговые данные: [https://storage.yandexcloud.net/ducket4/](https://storage.yandexcloud.net/ducket4/) или [s3://ducket4/](s3://ducket4/)
