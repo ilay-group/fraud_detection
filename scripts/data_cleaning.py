@@ -2,9 +2,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, unix_timestamp
 
 
-accesskey = "YCAJEsF9oa2x1Nc9M-K6LvOQv"
-secretkey = "YCNfV4qnbiRx7zaZ5uzsHB4OoxwdQZa6fC3I1qGD"
-data_path = "s3a://ducket/"
+accesskey = "accesskey"
+secretkey = "secretkey"
+data_path = "s3a://data_path/"
 
 
 
@@ -55,7 +55,7 @@ df = df.orderBy("transaction_id")
 
 df = df.repartition(40)
 
-write_path = "s3a://ducket4/filespark"
+write_path = "s3a://write_path"
 
 df.write.mode("overwrite").option("header", "true").parquet(write_path) 
 
