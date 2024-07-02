@@ -43,6 +43,7 @@
 ***
 ## Настройка облачной инфраструктуры:
 Данные в S3 доступны по адресу [https://storage.yandexcloud.net/ducket](https://storage.yandexcloud.net/ducket)
+
 Список данных в HDFS:
 ![](hdfsscreen.jpeg)
 ### Оценка затрат
