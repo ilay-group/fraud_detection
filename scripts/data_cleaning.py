@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, unix_timestamp
-
+import findspark
 
 accesskey = "accesskey"
 secretkey = "secretkey"
