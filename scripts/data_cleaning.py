@@ -1,6 +1,8 @@
+import findspark
+findspark.init()
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, unix_timestamp
-import findspark
+
 
 accesskey = "accesskey"
 secretkey = "secretkey"
@@ -19,7 +21,7 @@ def remove_outliers_iqr(df, columns):
         df = df.filter((col(col_name) >= lower_bound) & (col(col_name) <= upper_bound))
     return df
 
-findspark.init()
+
 spark = SparkSession.builder \
     .appName("TransactionValidation") \
     .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
