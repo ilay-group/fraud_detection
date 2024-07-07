@@ -46,7 +46,7 @@
 Данные в S3 доступны по адресу [https://storage.yandexcloud.net/ducket](https://storage.yandexcloud.net/ducket) или [s3://ducket/](s3://ducket/)
 
 Список данных в HDFS:
-![](hdfsscreen.jpeg)
+![](screens/hdfsscreen.jpeg)
 ### Оценка затрат
 
 * Стоимость часа аренды кластера без публичного доступа: **35,96 ₽/час**
