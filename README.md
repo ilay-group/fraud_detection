@@ -29,16 +29,16 @@
 * Achievements / impact factors: доля выявленных ошеннических транзакций должна быть не меньше 98% + доля корректных транзакций, которые система определяет как мошеннические, не должна превышать 5% + общий ущерб клиентов за месяц не должен превышать 500 тыс. руб.
 ***
 ## Задачи:
-* Настройка облачной инфраструктуры
-  * Создание S3 хранилища  
-  * Копирование данных с S3 компании на свой S3
-  * Копирование данных с S3 в HDFS
-  * Оценка и оптимизация затрат
 * Подготовка данных
   * Очистка данных:
     * Поиск проблем в данных
     * Написание скрипта для очистки данных
 * Разработка модели
+* Настройка облачной инфраструктуры
+  * Создание S3 хранилища  
+  * Копирование данных с S3 компании на свой S3
+  * Копирование данных с S3 в HDFS
+  * Оценка и оптимизация затрат
 * Развертывание модели
 * Настройка мониторинга
 ***
@@ -46,7 +46,7 @@
 Данные в S3 доступны по адресу [https://storage.yandexcloud.net/ducket](https://storage.yandexcloud.net/ducket) или [s3://ducket/](s3://ducket/)
 
 Список данных в HDFS:
-![](screens/hdfsscreen.jpeg)
+![](hdfsscreen.jpeg)
 ### Оценка затрат
 
 * Стоимость часа аренды кластера без публичного доступа: **35,96 ₽/час**
@@ -94,3 +94,8 @@
   * Выбросы
 * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Итоговые данные: [https://storage.yandexcloud.net/ducket4/](https://storage.yandexcloud.net/ducket4/) или [s3://ducket4/](s3://ducket4/)
+## [Автоматизация очистки данных]()
+* DAG:[data_clear_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/data_clear_dag.py)
+  * [Скрипт для установки зависимостей](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/install_env.py)
+  * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
+* Скриншот:![](screens/dag_screen.jpeg)
