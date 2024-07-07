@@ -94,7 +94,7 @@
   * Выбросы
 * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Итоговые данные: [https://storage.yandexcloud.net/ducket4/](https://storage.yandexcloud.net/ducket4/) или [s3://ducket4/](s3://ducket4/)
-## [Автоматизация очистки данных]()
+## Автоматизация очистки данных
 * DAG:[data_clear_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/data_clear_dag.py)
   * [Скрипт для установки зависимостей](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/install_env.py)
   * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
