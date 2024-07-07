@@ -21,8 +21,8 @@ YC_DP_GROUP_ID = 'YC_DP_GROUP_ID'
 
 
 # Данные для S3
-YC_SOURCE_BUCKET = 'dducket'                     # YC S3 bucket for pyspark source files
-YC_DP_LOGS_BUCKET = 'dducket/airflow_logs/'      # YC S3 bucket for Data Proc cluster logs
+YC_SOURCE_BUCKET = 'YC_SOURCE_BUCKET'                     # YC S3 bucket for pyspark source files
+YC_DP_LOGS_BUCKET = 'YC_DP_LOGS_BUCKET/airflow_logs/'      # YC S3 bucket for Data Proc cluster logs
 
 
 # Создание подключения для Object Storage
