@@ -99,3 +99,10 @@
   * [Скрипт для установки зависимостей](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/install_env.py)
   * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Скриншот:![](screens/dag_screen.jpeg)
+***
+## Обучение модели:
+* Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/train_model.py)
+* Скриншот:![](screens/mlflow_screen.jpeg)
+## Автоматическое переобучение модели:
+* DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/dags/autotrain_model_dag.py)
+* Скриншот:![](screens/airflow_autotrainmodel_screen.jpeg)
