@@ -107,3 +107,4 @@
 ## Автоматическое переобучение модели:
 * DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/dags/autotrain_model_dag.py)
 * Скриншот:![](screens/airflow_autotrain.jpeg)
+* bucket с артефактами: [https://storage.yandexcloud.net/fdghvjgfd](https://storage.yandexcloud.net/fdghvjgfd) или [s3://fdghvjgfd/](s3://fdghvjgfd/)
