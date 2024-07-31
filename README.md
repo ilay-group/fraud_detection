@@ -99,7 +99,8 @@
   * [Скрипт для установки зависимостей](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/install_env.py)
   * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Скриншот:![](screens/dag_screen.jpeg)
-### ***
+***
+###  
 ### В этом задании был использован airflow 3й версии т.к в нём была добавлена автоустановка зависимостей
 ## Обучение модели:
 * Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/train_model.py)
