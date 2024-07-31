@@ -100,6 +100,7 @@
   * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Скриншот:![](screens/dag_screen.jpeg)
 ***
+### В данном задании используется airflow 3й версии
 ## Обучение модели:
 * Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/train_model.py)
 * Скриншот:![](screens/mlflow_screen.jpeg)
