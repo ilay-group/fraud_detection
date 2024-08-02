@@ -85,9 +85,9 @@ with mlflow.start_run(run_name=run_name, experiment_id=experiment_id):
 
     # Создание сетки параметров
     paramGrid = (ParamGridBuilder()
-         .addGrid(classifier.fitIntercept, [True])
-         .addGrid(classifier.regParam, [0.01])
-         .addGrid(classifier.elasticNetParam, [0.75])
+         .addGrid(classifier.fitIntercept, [True, False])
+         .addGrid(classifier.regParam, [0.001, 0.01, 0.1, 1, 10])
+         .addGrid(classifier.elasticNetParam, [0.0, 0.25, 0.5, 0.75, 1.0])
          .build())
 
     # Оценка
