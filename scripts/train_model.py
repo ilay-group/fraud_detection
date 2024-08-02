@@ -3,8 +3,8 @@ import sys
 import logging
 
 
-os.environ["AWS_ACCESS_KEY_ID"] = "YCAJEpPVJFUpfTk89BLe6Xm5n"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "YCOYpdAJ44cUL1xJzigqocuDyYwL9EgQ9j_OC6_c"
+os.environ["AWS_ACCESS_KEY_ID"] = "AWS_ACCESS_KEY_ID"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "AWS_SECRET_ACCESS_KEY"
 os.environ["MLFLOW_S3_ENDPOINT_URL"] = "https://storage.yandexcloud.net"
 os.environ["AWS_DEFAULT_REGION"] = "ru-central1"
 
@@ -40,8 +40,8 @@ logger = logging.getLogger()
 spark = SparkSession.builder.appName('train').getOrCreate()
 hadoop_conf = spark.sparkContext._jsc.hadoopConfiguration()
 hadoop_conf.set("fs.s3.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-hadoop_conf.set("fs.s3a.access.key", "YCAJEpPVJFUpfTk89BLe6Xm5n")
-hadoop_conf.set("fs.s3a.secret.key", "YCOYpdAJ44cUL1xJzigqocuDyYwL9EgQ9j_OC6_c")
+hadoop_conf.set("fs.s3a.access.key", "AWS_ACCESS_KEY_ID")
+hadoop_conf.set("fs.s3a.secret.key", "AWS_SECRET_ACCESS_KEY")
 hadoop_conf.set("fs.s3a.endpoint", "storage.yandexcloud.net")
 
 
@@ -60,7 +60,7 @@ def get_pipeline():
     return pipeline
 
 os.environ["MLFLOW_S3_ENDPOINT_URL"] = "https://storage.yandexcloud.net"
-TRACKING_SERVER_HOST = "10.129.0.19"
+TRACKING_SERVER_HOST = "TRACKING_SERVER_HOST"
 mlflow.set_tracking_uri(f"http://{TRACKING_SERVER_HOST}:8000")
 logger.info("tracking URI: %s", {mlflow.get_tracking_uri()})
 logger.info("Loading Data ...")
@@ -85,9 +85,9 @@ with mlflow.start_run(run_name=run_name, experiment_id=experiment_id):
 
     # Создание сетки параметров
     paramGrid = (ParamGridBuilder()
-         .addGrid(classifier.fitIntercept, [True])
-         .addGrid(classifier.regParam, [0.01])
-         .addGrid(classifier.elasticNetParam, [0.75])
+         .addGrid(classifier.fitIntercept, [True, False])
+         .addGrid(classifier.regParam, [0.001, 0.01, 0.1, 1, 10])
+         .addGrid(classifier.elasticNetParam, [0.0, 0.25, 0.5, 0.75, 1.0])
          .build())
 
     # Оценка

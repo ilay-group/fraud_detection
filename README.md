@@ -1,5 +1,6 @@
 # Fraud Detection
 ***
+### 2
 ## Цели проектируемой антифрод-системы в соответствии с требованиями заказчика:
 * Бюджет создания антифрод-системы не должен превысить 10 млн. руб. (не считая зарплат специалистам)
 * MVP должно быть готово через три месяца
@@ -42,6 +43,7 @@
 * Развертывание модели
 * Настройка мониторинга
 ***
+### 3
 ## Настройка облачной инфраструктуры:
 Данные в S3 доступны по адресу [https://storage.yandexcloud.net/ducket](https://storage.yandexcloud.net/ducket) или [s3://ducket/](s3://ducket/)
 
@@ -85,6 +87,7 @@
 * Использовать прерывающиеся виртуальные машины
 * Посмотреть список доступых льгот
 ***
+### 4
 ## [Очистка данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/notebook/Data%20cleaning.ipynb):
 * Поиск проблем в данных:
   * Дубликаты
@@ -100,11 +103,12 @@
   * [Скрипт для очистки данных](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/data_cleaning.py)
 * Скриншот:![](screens/dag_screen.jpeg)
 ***
+### 5
 ### В этом задании был использован airflow 3й версии т.к в нём была добавлена автоустановка зависимостей
 ## Обучение модели:
-* Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/scripts/train_model.py)
+* Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/train_model.py)
 * Скриншот:![](screens/mlflow_autotrain.jpeg)
 ## Автоматическое переобучение модели:
-* DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/in-editing/dags/autotrain_model_dag.py)
+* DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/autotrain_model_dag.py)
 * Скриншот:![](screens/airflow_autotrain.jpeg)
 * bucket с артефактами: [https://storage.yandexcloud.net/fdghvjgfd](https://storage.yandexcloud.net/fdghvjgfd) или [s3://fdghvjgfd/](s3://fdghvjgfd/)
