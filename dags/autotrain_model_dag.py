@@ -57,7 +57,7 @@ if not session.query(Connection).filter(Connection.conn_id == ycSA_connection.co
     session.commit()
 
 with DAG(
-        dag_id = 'DATA_CLEAR',
+        dag_id = 'AUTOTRAIN_MODEL',
         start_date=datetime(year = 2024,month = 1,day = 20),
         schedule_interval = timedelta(minutes = 30),
         catchup=False
