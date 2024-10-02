@@ -112,7 +112,19 @@
 ## Обучение модели:
 * Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/train_model.py)
 * Скриншот:![](screens/mlflow_autotrain.jpeg)
+* 
 ## Автоматическое переобучение модели:
 * DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/autotrain_model_dag.py)
 * Скриншот:![](screens/airflow_autotrain.jpeg)
 * bucket с артефактами: [https://storage.yandexcloud.net/fdghvjgfd](https://storage.yandexcloud.net/fdghvjgfd) или [s3://fdghvjgfd/](s3://fdghvjgfd/)
+
+### 6
+## Валидация и A/B тестирование моделей:
+* Скрипт подготовки данных: [reedit_data.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/reedit_data.py)
+* Скрипт обучения модели с валидацией: [train_with_val.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/train_with_val.py)
+* Скриншот mlflow:![](screens/mlflow_screen_val.png)
+## DAG: [train_with_val_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/train_with_val_dag.py)
+* Скриншот airflow:![](screens/airflow_screen_val.png)
+
+
+
