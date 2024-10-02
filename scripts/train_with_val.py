@@ -81,7 +81,7 @@ spark = SparkSession.builder \
     .config("spark.local.dir", "/tmp/") \
     .getOrCreate()
 
-df = spark.read.parquet("s3a://DATA_BUCKET/data").sample(fraction=0.1, seed=random_seed)
+df = spark.read.parquet("s3a://REEDIT_DATA_BUCKET/data").sample(fraction=0.1, seed=random_seed)
 
 df_1 = df.filter(df["tx_fraud"] == 1)
 df_0 = df.filter(df["tx_fraud"] == 0)
@@ -149,7 +149,7 @@ recalls_old = [[] for _ in range(10)]
 for i in range(1):
     random.seed(i)
     
-    df = spark.read.parquet("s3a://DATA_BUCKET/data").sample(fraction=0.1, seed=random_seed)
+    df = spark.read.parquet("s3a://REEDIT_DATA_BUCKET/data").sample(fraction=0.1, seed=random_seed)
 
     df_1 = df.filter(df["tx_fraud"] == 1)
     df_0 = df.filter(df["tx_fraud"] == 0)
