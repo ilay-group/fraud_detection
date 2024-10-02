@@ -79,6 +79,10 @@
   * Средняя цена 1 ГБ HDFS хранилища в месяц: (11,91 ₽/месяц + 2,92 ₽/месяц + 8,80 ₽/месяц + 19,80 ₽/месяц) / 4 =  10,8575  ₽/месяц
   * Средняя цена 1 ГБ S3 хранилища в месяц: (2,01 ₽/месяц + 1,07 ₽/месяц + 0,535 ₽/месяц) / 3 = 1,2050 ₽/месяц
 
+### В сравнении не учтены:
+* затраты на операции чтения / записи данных
+* рабочее время на администрирование кластеров
+* заполненность дискового пространства в кластере DataProc, который развернут, как на скриншоте выше
 ## Оптимизация затрат:
 * Использовать ледяное хранилище для данных с редким доступом
 * Использовать HDD для данных с частым доступом
@@ -108,7 +112,19 @@
 ## Обучение модели:
 * Скрипт обучения модели: [train_model.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/train_model.py)
 * Скриншот:![](screens/mlflow_autotrain.jpeg)
+* 
 ## Автоматическое переобучение модели:
 * DAG: [autotrain_model_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/autotrain_model_dag.py)
 * Скриншот:![](screens/airflow_autotrain.jpeg)
 * bucket с артефактами: [https://storage.yandexcloud.net/fdghvjgfd](https://storage.yandexcloud.net/fdghvjgfd) или [s3://fdghvjgfd/](s3://fdghvjgfd/)
+
+### 6
+## Валидация и A/B тестирование моделей:
+* Скрипт подготовки данных: [reedit_data.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/reedit_data.py)
+* Скрипт обучения модели с валидацией: [train_with_val.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/train_with_val.py)
+* Скриншот mlflow:![](screens/mlflow_screen_val.png)
+## DAG: [train_with_val_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/train_with_val_dag.py)
+* Скриншот airflow:![](screens/airflow_screen_val.png)
+
+
+
