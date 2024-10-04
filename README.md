@@ -128,6 +128,7 @@
 
 ### 7
 ## Асинхронный потоковый режим:
+* Скриншот Apache Kafka в облаке:![](screens/kafka.png)
 * Producer: [producer.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/producer.py)
 * Consumer: [consumer.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/consumer.py)
 * Скриншот Producer:![](screens/screen_producer.png)
