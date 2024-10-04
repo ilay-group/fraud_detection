@@ -126,5 +126,12 @@
 ## DAG: [train_with_val_dag.py](https://github.com/ilay-group/fraud_detection/blob/main/dags/train_with_val_dag.py)
 * Скриншот airflow:![](screens/airflow_screen_val.png)
 
-
+### 7
+## Асинхронный потоковый режим:
+* Скриншот Apache Kafka в облаке:![](screens/kafka.png)
+* Producer: [producer.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/producer.py)
+* Consumer: [consumer.py](https://github.com/ilay-group/fraud_detection/blob/main/scripts/consumer.py)
+* Скриншот Producer:![](screens/screen_producer.png)
+* Скриншот Consumer:![](screens/screen_consumer.png)
+* При скорости в 1,5 сообщения в секунду начинает расти очередь необработанных сообщений
 
