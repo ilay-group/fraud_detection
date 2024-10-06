@@ -1,7 +1,7 @@
 FROM python:3.8.2-buster
 COPY CA.pem /usr/src/app
-COPY scripts/producer.py /usr/src/app
-COPY scripts/consumer.py /usr/src/app
+COPY scripts/producer_v2.py /usr/src/app
+COPY scripts/consumer_v2.py /usr/src/app
 
 # Install OpenJDK-11
 RUN apt-get update && \
@@ -18,4 +18,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "python scripts/producer.py & python scripts/consumer.py"]
+CMD ["sh", "-c", "python scripts/producer_v2.py & python scripts/consumer_v2.py"]
