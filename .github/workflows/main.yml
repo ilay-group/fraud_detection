@@ -1,11 +1,56 @@
-name: my workflow
+name: Docker Image CI
+
+
 on:
+  workflow_dispatch:
   push:
+  pull_request:
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      MLFLOW_S3_ENDPOINT_URL: ${{ secrets.MLFLOW_S3_ENDPOINT_URL }}
+      MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      TEST_TAG: ilay-group/fraud_detection:test
+      LATEST_TAG: ilay-group/fraud_detection:latest
+
+
     steps:
-      - uses: actions/checkout@v1
-      - name: Login to GitHub Package Registry
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.pkg.github.com -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+    - name: checkout
+      uses: actions/checkout@v3
+    
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+  
+    - name: Build and export to Docker
+      uses: docker/build-push-action@v4
+      with:
+        context: ./
+        load: true
+        tags: ${{ env.TEST_TAG }}
+    
+    - name: Run tests
+      run: |
+        docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e MLFLOW_S3_ENDPOINT_URL -e MLFLOW_TRACKING_URI -e AWS_DEFAULT_REGION -p 8000:8000 -e BOOTSTRAP_SERVERS -e KAFKA_USERNAME -e KAFKA_PASSWORD ${{ env.TEST_TAG }}
+    
+    - name: Build and push
+      uses: docker/build-push-action@v4
+      with:
+        context: ./
+        platforms: linux/amd64 
+        push: true
+        tags: ${{ env.LATEST_TAG }}
