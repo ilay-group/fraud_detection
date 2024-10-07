@@ -11,23 +11,8 @@ import mlflow.spark
 
 import os
 
-aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
-mlflow_s3_endpoint_url = os.getenv("MLFLOW_S3_ENDPOINT_URL")
-aws_default_region = os.getenv("AWS_DEFAULT_REGION")
-
-
-os.environ["AWS_ACCESS_KEY_ID"] = aws_access_key_id
-os.environ["AWS_SECRET_ACCESS_KEY"] = aws_secret_access_key
-os.environ["MLFLOW_S3_ENDPOINT_URL"] = mlflow_s3_endpoint_url
-os.environ["AWS_DEFAULT_REGION"] = aws_default_region
-
 spark = SparkSession.builder \
     .appName("TransactionValidation") \
-    .config("spark.hadoop.fs.s3a.access.key", aws_access_key_id) \
-    .config("spark.hadoop.fs.s3a.secret.key", aws_secret_access_key) \
-    .config("spark.hadoop.fs.s3a.endpoint", "s3.yandexcloud.net") \
-    .config("spark.hadoop.fs.s3a.path.style.access", "true") \
     .getOrCreate()
 
 class RecordMetadata(NamedTuple):
@@ -48,8 +33,8 @@ MLFLOW_TRACKING_URI=os.getenv("MLFLOW_TRACKING_URI")
 mlflow.set_tracking_uri(f"http://{MLFLOW_TRACKING_URI}")
 experiment = set_or_create_experiment("lrmodel")
 
-logged_model = 'runs:/b958bca33fc847feb63e40ee4ab074c3/lrModel'
-loaded_model = mlflow.spark.load_model(logged_model)
+#logged_model = 'runs:/b958bca33fc847feb63e40ee4ab074c3/lrModel'
+loaded_model = mlflow.spark.load_model("lrModel")
 
 kafka_server = str(os.getenv("BOOTSTRAP_SERVERS", ""))
 kafka_username = str(os.getenv("KAFKA_USERNAME", ""))
