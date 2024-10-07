@@ -2,6 +2,7 @@ FROM python:3.8.2-buster
 COPY CA.pem /usr/src/app
 COPY scripts/producer_v2.py /usr/src/app
 COPY scripts/consumer_v2.py /usr/src/app
+COPY scripts/lrModel ./lrModel
 
 # Install OpenJDK-11
 RUN apt-get update && \
