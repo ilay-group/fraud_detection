@@ -17,19 +17,19 @@ spec:
     spec:
       containers:
       - name: fraud-detection-deployment
-        image: cr.yandex/crp74krcf372jh05bpl8/fraud:v1
+        image: image
         ports:
         - containerPort: 8000
         env:
         - name: DOCKERHUB_TOKEN
-          value: "dckr_pat_XlFFWhTmZ3T0UQznWavaSwRzn1Y"
+          value: "DOCKERHUB_TOKEN"
         - name: DOCKERHUB_USERNAME
-          value: "shjgfefgdhhted"
+          value: "DOCKERHUB_USERNAME"
         - name: MLFLOW_TRACKING_URI
-          value: "84.252.133.166:8000"
+          value: "MLFLOW_TRACKING_URI"
         - name: BOOTSTRAP_SERVERS
-          value: "rc1d-ijds8g2jn0kl2q5d.mdb.yandexcloud.net:9091"
+          value: "BOOTSTRAP_SERVERS"
         - name: KAFKA_PASSWORD
-          value: "8x.v2nHdBv.WBh;"
+          value: "KAFKA_PASSWORD"
         - name: KAFKA_USERNAME
-          value: "cgddtntdj"
+          value: "KAFKA_USERNAME"
