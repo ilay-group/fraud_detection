@@ -21,4 +21,4 @@ COPY . .
 EXPOSE 8000
 
 
-CMD ["sh", "-c", "python scripts/producer_v2.py & python scripts/consumer_v2.py"]
+CMD ["python", "-m", "pytest", "tests"]

@@ -1,8 +1,0 @@
-git:
- dags:
-  enabled: true
-  repositories:
-   - repository: "https://github.com/{your_repo}.git"
-     branch: "main"
-     name: ""
-     path: "dags"

@@ -135,18 +135,3 @@
 * Скриншот Consumer:![](screens/screen_consumer.png)
 * При скорости в 1,5 сообщения в секунду начинает расти очередь необработанных сообщений
 
-### 8
-## python REST API:
-* Producer: [producer_v2.py](scripts/producer_v2.py)
-* Consumer: [consumer_v2.py](scripts/consumer_v2.py)
-* github actions: -
-## k8s:
-* Конфигурационные файлы:
-  * [load-balancer.yaml](k8s/load-balancer.yaml)
-  * [load-balancer.yaml](k8s/depl.yaml)
-* Скриншот сети:![](screens/network.png)
-* Скриншот подов:![](screens/pods.png)
-* Скриншот запроса:![](screens/post.png)
-
-
-
