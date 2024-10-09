@@ -1,2 +1,7 @@
+fastapi
+uvicorn
+kafka-python
+pydantic
+mlflow
 pyspark
-findspark
+boto3
