@@ -151,6 +151,4 @@
 ### 9
 * Файлы для k8s: [k8s](k8s/)
 * Скриншот дашборда со статистикой:![](screens/datatbord.png)
-* Скриншот правил для алерта:![](screens/alertrule.png)
-* Скриншот сработовшего алерта:![](screens/alertwork.png)
 
