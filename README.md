@@ -150,5 +150,6 @@
 
 ### 9
 * Файлы для k8s: [k8s](k8s/)
+* Consumer: [consumer_v3.py](scripts/consumer_v3.py)
 * Скриншот дашборда со статистикой:![](screens/datatbord.png)
 
